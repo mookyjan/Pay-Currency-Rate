@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\single_currency_item.xml",
+        "source": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\src\\main\\res\\layout\\single_currency_item.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\single_engineer_item.xml",
+        "source": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\src\\main\\res\\layout\\single_engineer_item.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\shift_schedule_fragment.xml",
+        "source": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\src\\main\\res\\layout\\shift_schedule_fragment.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\currency_rate_list_fragment.xml",
+        "source": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\src\\main\\res\\layout\\currency_rate_list_fragment.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\engineer_list_fragment.xml",
+        "source": "C:\\Projects\\Examples\\Pay-Currency-Rate\\app\\src\\main\\res\\layout\\engineer_list_fragment.xml"
+    }
+]

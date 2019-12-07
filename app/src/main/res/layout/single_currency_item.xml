@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+       <variable
+           name="currency"
+           type="com.mudassirkhan.domain.entity.Quotes" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@color/design_default_color_background">
+
+
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/BaseTextView.OpenSansBold"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_8sdp"
+            android:text="@{currency.symbol+``}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="0dp"
+            tools:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/BaseTextView.OpenSansBold"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center_vertical"
+            android:text="@{currency.rate+``}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/txt_name"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/title_rates" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

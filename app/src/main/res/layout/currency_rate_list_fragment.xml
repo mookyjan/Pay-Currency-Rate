@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mudassirkhan.paycurrencyrate.ui.currencyratelist.CurrencyRateListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreyPrimary"
+        >
+
+
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:hint="@string/et_amount_value"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            currencyAdapter="@{viewModel.currencyList}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/et_amount"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/single_currency_item" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_8sdp"
+            android:id="@+id/left_guideline"
+            android:orientation="vertical"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/right_guideline"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_8sdp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

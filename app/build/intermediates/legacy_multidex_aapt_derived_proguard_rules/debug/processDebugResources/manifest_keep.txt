@@ -1,0 +1,4 @@
+# Referenced at C:\Projects\Examples\Pay-Currency-Rate\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:13
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at C:\Projects\Examples\Pay-Currency-Rate\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:13
+-keep class com.mudassirkhan.paycurrencyrate.PayCurrencyRateApp { <init>(); }

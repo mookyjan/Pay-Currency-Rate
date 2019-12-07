@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pay Currency Rate</string>
+    <string name="btn_schedule">Generate Schedule</string>
+
+    <string name="error_unknown_title">Failure</string>
+    <string name="error_unknown">An unknown error occurred. Please, try later.</string>
+    <string name="coming_soon">Coming soon</string>
+
+    <string name="title_main">Currency Exchange Rate</string>
+    <string name="title_rates">All Rates</string>
+    <string name="title_converter">Exchange Rate</string>
+    <string name="title_alerts">Alerts</string>
+
+    <string name="amount_value">0.0</string>
+    <string name="currency_name">Euro</string>
+
+    <string name="et_amount_value">Please enter amount value</string>
+</resources>
