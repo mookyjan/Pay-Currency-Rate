@@ -7,4 +7,6 @@ class RemoteDataSource (private val apiService: CurrencyApiService) {
 
       fun getCurrencyRateList() = apiService.getCurrenciesRateList()
 
+    fun getCurrencyList() = apiService.getCurrencyList()
+
 }

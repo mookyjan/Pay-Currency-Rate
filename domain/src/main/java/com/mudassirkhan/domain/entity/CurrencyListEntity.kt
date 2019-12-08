@@ -1,3 +1,3 @@
 package com.mudassirkhan.domain.entity
 
-data class CurrencyListEntity(val key: String, val value: String)
+data class CurrencyListEntity(val key: String, val value: Float, val unit: String?)

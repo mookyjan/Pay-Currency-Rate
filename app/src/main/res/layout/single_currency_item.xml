@@ -6,7 +6,7 @@
     <data>
        <variable
            name="currency"
-           type="com.mudassirkhan.domain.entity.Quotes" />
+           type="com.mudassirkhan.paycurrencyrate.ui.model.Currency" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_40sdp"
             android:gravity="center_vertical"
-            android:text="@{currency.rate+``}"
+            android:text="@{currency.exchangeRate+``}"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"

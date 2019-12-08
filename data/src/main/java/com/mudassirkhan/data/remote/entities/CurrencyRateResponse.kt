@@ -1,5 +1,6 @@
 package com.mudassirkhan.data.remote.entities
 
+import com.mudassirkhan.data.local.entity.CurrencyLocalModel
 import com.squareup.moshi.Json
 
 data class CurrencyRateResponse (
@@ -17,4 +18,11 @@ data class CurrencyRateResponse (
     var quotes: Map<String,Float>? = null
 ){
     val quotesList = quotes!!.toList()
+}
+
+fun CurrencyRateResponse.asDatabaseModel(): List<CurrencyLocalModel> {
+    return quotesList.map {
+        val symbol = it.first.substring(3..5)
+        CurrencyLocalModel(symbol = symbol, exchangeRate = it.second)
+    }
 }

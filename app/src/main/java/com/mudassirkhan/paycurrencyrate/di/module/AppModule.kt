@@ -6,6 +6,7 @@ import com.mudassirkhan.domain.Schedulers
 import com.mudassirkhan.paycurrencyrate.di.module.scheduler.AppSchedulers
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -13,6 +14,7 @@ internal class AppModule {
 
     @Provides
     @Singleton
+    @Named("application.context")
     internal fun providesContext(application: Application): Context {
         return   application.applicationContext
     }

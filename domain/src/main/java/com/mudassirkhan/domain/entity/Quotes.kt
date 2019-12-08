@@ -1,7 +1,8 @@
 package com.mudassirkhan.domain.entity
 
 data class Quotes(
-    var symbol: String = "", var rate: Float = 0f
+    var symbol: String = "", var rate: Float = 0f,
+    val unit: String?
 //    var uSDAED: Double? = null,
 //    var uSDAFN: Double? = null,
 //    var uSDALL: Double? = null,

@@ -8,6 +8,11 @@
         <variable
             name="viewModel"
             type="com.mudassirkhan.paycurrencyrate.ui.currencyratelist.CurrencyRateListViewModel" />
+
+        <variable
+            name="callback"
+            type="com.mudassirkhan.paycurrencyrate.ui.adapter.CurrencyRateListAdapter.Callbacks" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,30 +29,45 @@
             android:layout_marginTop="28dp"
             android:hint="@string/et_amount_value"
             android:singleLine="true"
+            android:text="@{viewModel.amountValue}"
             android:inputType="numberDecimal"
+            android:textAlignment="viewEnd"
             app:layout_constraintEnd_toStartOf="@+id/right_guideline"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/left_guideline"
             app:layout_constraintTop_toTopOf="parent" />
 
 
+        <TextView
+            android:id="@+id/text_view_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_4sdp"
+            android:text="@{viewModel.source.unit}"
+            android:textAlignment="viewEnd"
+            android:textSize="18sp"
+            tools:text="UNIT"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_amount" />
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            currencyAdapter="@{viewModel.currencyList}"
+            currencyAdapter="@{viewModel.currencyRateList}"
+            currencyCallbacks="@{callback}"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/left_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/et_amount"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_unit"
+            app:layout_constraintVertical_bias="0.0"
             tools:listitem="@layout/single_currency_item" />
-
-
 
         <androidx.constraintlayout.widget.Guideline android:layout_width="match_parent"
             android:layout_height="wrap_content"

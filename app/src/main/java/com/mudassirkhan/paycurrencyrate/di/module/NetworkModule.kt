@@ -8,13 +8,15 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
-import okhttp3.OkHttpClient
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+
+private const val KEY = "c3e3d769904df94547dc93f09f9017fe"
 
 @Module
 class NetworkModule {
@@ -47,6 +49,7 @@ class NetworkModule {
             builder.addInterceptor(getHttpLoggingInterceptor())
 //        }
 
+        builder.addInterceptor(CurrencyInterceptor)
         builder.readTimeout(60, TimeUnit.SECONDS)
         builder.connectTimeout(60, TimeUnit.SECONDS)
         builder.writeTimeout(60, TimeUnit.SECONDS)
@@ -66,6 +69,24 @@ class NetworkModule {
             interceptor.level = HttpLoggingInterceptor.Level.BODY
 //        }
         return interceptor
+    }
+
+    companion object CurrencyInterceptor : Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val originalRequest: Request = chain.request()
+
+            val newUrl: HttpUrl = originalRequest.url.newBuilder()
+                .addQueryParameter("access_key", KEY)
+                .addQueryParameter("format", "1")
+                .build()
+
+            val newRequest: Request = originalRequest.newBuilder()
+                .url(newUrl)
+                .build()
+
+            return chain.proceed(newRequest)
+        }
+
     }
 
 }
